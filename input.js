@@ -40,6 +40,9 @@ const setupInput = function(conn) {
     if (key === '\u0064') {
       connection.write('Move: right');
     }
+    if (key === '\u0072') {
+      connection.write('Say: I am smol')
+    }
     if (key === '\u0003') {
       process.exit();
     }
