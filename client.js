@@ -8,11 +8,19 @@ const connect = function() {
   }
   );
 
-  //message when player successfully connects to the server 
+
+  //message when player successfully connects to the server and snake name
   conn.on('connect', () => {
     console.log('Successfully connected to game server!');
     conn.write('Name: CIM');
-  })
+  });
+
+  //created to move the snake left at intervals of 50ms
+  conn.on('connect', () => {
+    setInterval(() => {
+      conn.write('Move: left');
+    }, 50);
+  });
 
 
   //message when player is kicked out for idling
